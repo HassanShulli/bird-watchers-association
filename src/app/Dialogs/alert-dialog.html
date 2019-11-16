@@ -1,0 +1,12 @@
+<div class="main-container">
+  <div class="title-container">
+    <span *ngIf="data.type === 'Error'"><mat-icon>error_outline</mat-icon>{{data.title}}</span>
+    <span *ngIf="data.type === 'Notification'"><mat-icon>check_circle_outline</mat-icon>{{data.title}}</span>
+  </div>
+  <div class="message-container">
+    <p>{{data.message}}</p>
+    <div class="button-container">
+      <button mat-button (click)="closeDialog()">{{data.button}}</button>
+    </div>
+  </div>
+</div>

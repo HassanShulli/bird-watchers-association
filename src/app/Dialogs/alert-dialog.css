@@ -1,0 +1,45 @@
+.main-container {
+  border-radius: 4px;
+  text-align: center;
+}
+
+.title-container {
+  height: 60px;
+  background: #292929;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+span {
+  font-size: 20px;
+  line-height: 2.5;
+}
+
+.message-container {
+  flex-direction: column;
+  padding: 20px;
+}
+
+p {
+  width: 100%;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+mat-icon {
+  font-size: 17px;
+  height: 16px;
+  color: #27AE60;
+}
+
+button {
+  margin: 0 30px;
+  width: 140px;
+  background: #FFFFFF;
+  border: 2px solid #27AE60;
+  border-radius: 7px;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 0;
+}

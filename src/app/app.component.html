@@ -1,10 +1,39 @@
-<div *ngIf="state === 'ObservationList'">
-  <div *ngFor="let bird of birdList">
-    <div>{{bird.name}}</div>
-    <div>{{bird.rarity}}</div>
-    <div>{{bird.notes}}</div>
+<div *ngIf="state === 'ObservationList'" style="padding: 10px;">
+
+  <div class="header-container">
+    <img src="../assets/bwa_logo.svg" alt="Bird Watching Association" style="width: 137px;sheight: 55px;">
   </div>
-  <button class="button" (click)="changeState('ObservationForm');">Add New Observation</button>
+
+  <div style="display: flex;flex-wrap: wrap;width: 100%;margin-left: 50px;" *ngIf="state === 'media'">
+    <div style="display: inline-block;padding: 5px;" *ngFor="let bird of birdList; let i = index" [attr.data-index]="i">
+      <mat-card style="width: 260px;height: 318px;padding-bottom: 0;">
+        <mat-card-title style="text-align: center;padding-top: 5px;width: 260px;" class="card-media">
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <!--Media Type Image-->
+        </mat-card-title>
+        <mat-card-content>
+          <p style="font-size: 16px;color: #3A3A3A;">{{bird.name}}</p>
+          <p><strong>Species: </strong>{{bird.species}}</p>
+          <p><strong>Rarity: </strong>{{bird.rarity}}</p>
+        </mat-card-content>
+
+        <div class="preview-div">
+          <button mat-button (click)="viewNotes(bird.notes);"
+                  style="width: 50%;background-color: #27AE60;color: white;border-radius: 0;">
+            View Notes
+          </button>
+          <button mat-button (click)="editObservation(bird)"
+                  style="width: 50%;background-color: white;color: #27AE60;border-radius: 0;">
+            Edit
+          </button>
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
+  <div style="text-align: center;padding: 5px;">
+    <button class="button" (click)="changeState('ObservationForm');">Add New Observation</button>
+  </div>
 </div>
 
 <div *ngIf="state === 'ObservationForm'">
@@ -16,21 +45,26 @@
     </div>
 
     <div>
+      <label for="species">Species</label>
+      <input id="species" type="text" formControlName="species">
+    </div>
+
+
+    <div>
       <label for="notes">Notes</label>
       <input id="notes" type="text" formControlName="notes">
     </div>
 
     <div>
-      <label for="rarity">Notes</label>
-      <select id="rarity">
+      <label for="rarity">Rarity</label>
+      <select id="rarity" formControlName="rarity">
         <option value="common">common</option>
         <option value="rare">rare</option>
         <option value="extremely rare">extremely rare</option>
       </select>
     </div>
-
-    <button class="button" (click)="changeState('ObservationList');">Cancel</button>
-    <button class="button" type="submit">Purchase</button>
+    <button mat-button class="button" (click)="changeState('ObservationList');">Cancel</button>
+    <button mat-button class="button" type="submit">Submit</button>
 
   </form>
 </div>
