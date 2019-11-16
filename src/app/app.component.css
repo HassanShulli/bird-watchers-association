@@ -1,3 +1,17 @@
+  /*.observation-view {*/
+    /*display: block;*/
+    /*background-color: green;*/
+  /*}*/
+
+  /*@media only screen and (max-width: 600px) {*/
+    /*.observation-view {*/
+      /*display: none;*/
+      /*background-color: blueviolet;*/
+    /*}*/
+  /*}*/
+
+
+
 .header-container {
   text-align: center;
   background: #f9f9f9;
@@ -32,6 +46,22 @@
 .preview-label {
   line-height: 33px;
   cursor: pointer;
+}
+
+.add-btn {
+  margin: 0 10px;
+  width: 160px;
+  height: 40px;
+  background: #ffffff;
+  border: 2px solid #27AE60;
+  color: #27AE60;
+  font-size: 14px;
+  border-radius: 7px;
+}
+
+.add-icon {
+  margin-bottom: 2px;
+  color: #27AE60;
 }
 
 /*.card-button-edit {*/

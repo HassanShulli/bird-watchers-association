@@ -9,6 +9,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class AppComponent implements OnInit {
   title = 'birdObservations';
+  currentUser = '';
   birdList = [];
   checkoutForm;
   state = 'ObservationList';
@@ -27,10 +28,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const getBirdObservations = localStorage.getItem('observations');
+    this.currentUser = localStorage.getItem('username');
     if (getBirdObservations) {
       this.birdList = JSON.parse(localStorage.getItem('observations'));
     } else {
       this.birdList = [];
+    }
+
+    if (!this.currentUser) {
+      this.openWelcomeDialog();
     }
     console.log('this.birdList : ', this.birdList);
     // this.birdList.push({
@@ -59,6 +65,10 @@ export class AppComponent implements OnInit {
 //   this.getTemplates();
 // });
 
+  openWelcomeDialog() {
+
+  }
+
   changeState(s) {
     this.state = s;
   }
@@ -67,29 +77,35 @@ export class AppComponent implements OnInit {
     let missingFields = '';
     let valid = true;
     if (!value.name) {
+      console.log('No Name');
       valid = false;
-      missingFields += ' name';
+      missingFields += ', name';
     }
     if (!value.species) {
+      console.log('No Species');
       valid = false;
-      missingFields += ' species';
+      missingFields += ', species';
     }
     if (!value.rarity) {
+      console.log('No rarity');
       valid = false;
-      missingFields += ' rarity';
+      missingFields += ', rarity';
     }
     if (!value.notes) {
+      console.log('No notes');
       valid = false;
-      missingFields += ' notes';
+      missingFields += ', notes';
     }
 
     if (valid) {
+      console.log('VALID !!');
       value.timestamp = Date.now();
       this.birdList.push(value);
       localStorage.setItem('observations', JSON.stringify(this.birdList));
       console.log('value : ', value);
       this.changeState('ObservationList');
     } else {
+      console.log('NOT VALID');
       const dialogRef = this.dialog.open(AlertComponent, {
         width: '600px',
         data: {
@@ -103,13 +119,13 @@ export class AppComponent implements OnInit {
       dialogRef.afterClosed().subscribe(res => {
       });
     }
-    console.log('this.checkoutForm : ', this.checkoutForm);
-    console.log('value : ', value);
-
-    this.birdList.push(value);
-    localStorage.setItem('observations', JSON.stringify(this.birdList));
-    console.log('value : ', value);
-    this.changeState('ObservationList');
+    // console.log('this.checkoutForm : ', this.checkoutForm);
+    // console.log('value : ', value);
+    //
+    // this.birdList.push(value);
+    // localStorage.setItem('observations', JSON.stringify(this.birdList));
+    // console.log('value : ', value);
+    // this.changeState('ObservationList');
   }
 }
 
