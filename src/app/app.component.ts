@@ -70,7 +70,8 @@ export class AppComponent implements OnInit {
   openWelcomeDialog() {
     this.dialog.open(WelcomeDialogComponent, {
       width: '400px',
-      hasBackdrop: false
+      hasBackdrop: false,
+      backdropClass: 'backdropBackground'
     });
   }
 
@@ -78,7 +79,20 @@ export class AppComponent implements OnInit {
     this.state = s;
   }
 
+  clearForm() {
+    this.checkoutForm.reset();
+  }
+
+  editObservation(bird) {
+    console.log('bird : ', bird);
+    this.checkoutForm.controls.name.value = bird.name;
+    this.checkoutForm.controls.rarity.value = bird.rarity;
+    this.checkoutForm.controls.species.value = bird.species;
+    this.checkoutForm.controls.notes.value = bird.notes;
+  }
+
   submitForm(value) {
+    console.log('checkoutForm : ', this.checkoutForm);
     let missingFields = '';
     let valid = true;
     if (!value.name) {

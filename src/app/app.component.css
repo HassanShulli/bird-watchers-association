@@ -1,16 +1,27 @@
-  /*.observation-view {*/
-    /*display: block;*/
-    /*background-color: green;*/
-  /*}*/
+/*.observation-view {*/
+/*display: block;*/
+/*background-color: green;*/
+/*}*/
 
-  /*@media only screen and (max-width: 600px) {*/
-    /*.observation-view {*/
-      /*display: none;*/
-      /*background-color: blueviolet;*/
-    /*}*/
-  /*}*/
+/*@media only screen and (max-width: 600px) {*/
+/*.observation-view {*/
+/*display: none;*/
+/*background-color: blueviolet;*/
+/*}*/
+/*}*/
 
+.input {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
 
+.label {
+  padding-right: 10px;
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+}
 
 .header-container {
   text-align: center;
@@ -50,7 +61,6 @@
 
 .add-btn {
   margin: 0 10px;
-  width: 160px;
   height: 40px;
   background: #ffffff;
   border: 2px solid #27AE60;
@@ -59,32 +69,86 @@
   border-radius: 7px;
 }
 
+.add-btn-width {
+  width: 160px;
+}
+
+.form-btn-width {
+  width: 116px;
+}
+
+.cancel {
+  color: #b80e0e;
+  border-color: #b80e0e;
+}
+
 .add-icon {
   margin-bottom: 2px;
   color: #27AE60;
 }
 
+input {
+  border: 1px solid #676767;
+  border-radius: 7px;
+  height: 38px;
+  width: 200px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #545454;
+}
+
+input[type=text]:focus {
+  outline: none; /* Remove default outline and use border or box-shadow */
+  box-shadow: 0 0 0 2px #676767; /* Full freedom. (works also with border-radius) */
+}
+
+select {
+  border: 1px solid #676767;
+  border-radius: 7px;
+  height: 38px;
+  width: 200px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #545454;
+}
+
+form > div {
+  text-align: center;
+  padding: 15px;
+}
+
+
+
+/*.button {*/
+/*margin: 0 30px;*/
+/*width: 127px;*/
+/*height: 36px;*/
+/*background: #27AE60;*/
+/*color: white;*/
+/*border-radius: 0;*/
+/*}*/
+
 /*.card-button-edit {*/
-  /*background-color: #27AE60;*/
-  /*color: white;*/
-  /*display: inline-block;*/
-  /*width: 177px;*/
-  /*height: 33px;*/
-  /*text-align: center;*/
-  /*line-height: 30px;*/
-  /*cursor: pointer;*/
-  /*margin-top: 19px;*/
-  /*margin-left: -17px;*/
+/*background-color: #27AE60;*/
+/*color: white;*/
+/*display: inline-block;*/
+/*width: 177px;*/
+/*height: 33px;*/
+/*text-align: center;*/
+/*line-height: 30px;*/
+/*cursor: pointer;*/
+/*margin-top: 19px;*/
+/*margin-left: -17px;*/
 /*}*/
 
 /*.card-button-delete {*/
-  /*background-color: #f39c12;*/
-  /*color: white;*/
-  /*display: inline-block;*/
-  /*width: 177px;*/
-  /*height: 33px;*/
-  /*text-align: center;*/
-  /*line-height: 30px;*/
-  /*cursor: pointer;*/
-  /*margin-top: 19px;*/
+/*background-color: #f39c12;*/
+/*color: white;*/
+/*display: inline-block;*/
+/*width: 177px;*/
+/*height: 33px;*/
+/*text-align: center;*/
+/*line-height: 30px;*/
+/*cursor: pointer;*/
+/*margin-top: 19px;*/
 /*}*/
