@@ -5,25 +5,42 @@
 
 .title-container {
   height: 60px;
-  background: #292929;
+  background: #545454;
   color: #FFFFFF;
   text-align: center;
 }
 
 span {
-  font-size: 20px;
-  line-height: 2.5;
+  font-size: 17px;
+  line-height: 3.5;
+}
+
+input {
+  border: 1px solid #676767;
+  border-radius: 7px;
+  height: 38px;
+  width: 80%;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #545454;
+}
+
+input[type=text]:focus {
+  outline: none; /* Remove default outline and use border or box-shadow */
+  box-shadow: 0 0 0 2px #676767; /* Full freedom. (works also with border-radius) */
 }
 
 .message-container {
   flex-direction: column;
-  padding: 20px;
+}
+
+.button-container {
+  padding: 15px;
 }
 
 p {
-  width: 100%;
-  font-size: 16px;
-  margin-top: 0;
+  font-family: Roboto,sans-serif;
+  font-size: 14px;
 }
 
 mat-icon {
@@ -34,10 +51,11 @@ mat-icon {
 
 button {
   margin: 0 30px;
-  width: 140px;
-  background: #FFFFFF;
-  border: 2px solid #27AE60;
-  border-radius: 7px;
+  width: 127px;
+  height: 36px;
+  background: #27AE60;
+  color: white;
+  border-radius: 0;
 }
 
 ::ng-deep .mat-dialog-container {

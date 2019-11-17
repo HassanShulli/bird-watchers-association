@@ -35,6 +35,8 @@ export class AppComponent implements OnInit {
       this.birdList = [];
     }
 
+    console.log('this.currentUser : ', this.currentUser);
+
     if (!this.currentUser) {
       this.openWelcomeDialog();
     }
@@ -66,7 +68,10 @@ export class AppComponent implements OnInit {
 // });
 
   openWelcomeDialog() {
-
+    this.dialog.open(WelcomeDialogComponent, {
+      width: '400px',
+      hasBackdrop: false
+    });
   }
 
   changeState(s) {
@@ -130,6 +135,35 @@ export class AppComponent implements OnInit {
 }
 
 @Component({
+  selector: 'app-welcome-dialog',
+  templateUrl: './dialogs/welcome-dialog.html',
+  styleUrls: ['./dialogs/welcome-dialog.css']
+})
+
+export class WelcomeDialogComponent implements OnInit {
+
+  userName = '';
+
+  constructor(public dialogRef: MatDialogRef<WelcomeDialogComponent>) {
+  }
+
+  ngOnInit() {
+  }
+
+  submitName() {
+    console.log('this.userName  : ', this.userName);
+    if (this.userName) {
+      localStorage.setItem('username', this.userName);
+      this.closeDialog();
+    }
+  }
+
+  closeDialog() {
+    this.dialogRef.close();
+  }
+}
+
+@Component({
   selector: 'app-alert',
   templateUrl: './dialogs/alert-dialog.html',
   styleUrls: ['./dialogs/alert-dialog.css']
@@ -137,11 +171,9 @@ export class AppComponent implements OnInit {
 
 export class AlertComponent implements OnInit {
 
-  constructor(
-    public dialogRef: MatDialogRef<AlertComponent>,
-    public dialog: MatDialog,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
+  constructor(public dialogRef: MatDialogRef<AlertComponent>,
+              public dialog: MatDialog,
+              @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit() {
