@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               public dialog: MatDialog) {
     this.checkoutForm = this.formBuilder.group({
+      id: '',
       name: '',
       notes: '',
       species: '',
@@ -133,9 +134,17 @@ export class AppComponent implements OnInit {
             value.longitude = this.longitude;
             value.latitude = this.latitude;
             this.birdList[i] = value;
+            localStorage.setItem('observations', JSON.stringify(this.birdList));
           }
         }
-        localStorage.setItem('observations', JSON.stringify(this.birdList));
+      }
+
+      const getBirdObservations = localStorage.getItem('observations');
+      this.currentUser = localStorage.getItem('username');
+      if (getBirdObservations) {
+        this.birdList = JSON.parse(localStorage.getItem('observations'));
+      } else {
+        this.birdList = [];
       }
 
       this.changeState('ObservationList');
