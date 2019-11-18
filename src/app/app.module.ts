@@ -2,14 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent, WelcomeDialogComponent, AlertComponent } from './app.component';
+import { AppComponent, WelcomeDialogComponent, NotesDialogComponent, AlertComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   MatButtonModule,
-  MatCheckboxModule,
   MatIconModule,
-  MatInputModule,
   MatDialogModule,
   MatCardModule
 } from '@angular/material';
@@ -18,7 +16,8 @@ import {
   declarations: [
     AppComponent,
     AlertComponent,
-    WelcomeDialogComponent
+    WelcomeDialogComponent,
+    NotesDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,8 @@ import {
   ],
   entryComponents: [
     AlertComponent,
-    WelcomeDialogComponent
+    WelcomeDialogComponent,
+    NotesDialogComponent
   ],
   bootstrap: [AppComponent]
 })

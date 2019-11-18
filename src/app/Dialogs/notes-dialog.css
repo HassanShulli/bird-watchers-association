@@ -1,0 +1,55 @@
+
+.message-container {
+  flex-direction: column;
+}
+
+.main-container {
+  border-radius: 4px;
+  text-align: center;
+}
+
+.text-container {
+  height: 170px;
+  padding: 20px;
+}
+
+.title-container {
+  height: 50px;
+  background: #545454;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.button-container {
+  padding: 15px;
+}
+
+p {
+  font-family: Roboto,sans-serif;
+  font-size: 14px;
+  height: 85px;
+  overflow: hidden;
+}
+
+span {
+  font-size: 17px;
+  line-height: 2.7;
+}
+
+button {
+  margin: 0 30px;
+  width: 127px;
+  height: 36px;
+  background: #27AE60;
+  color: white;
+  border-radius: 0;
+}
+
+.main-container {
+  border-radius: 4px;
+  text-align: center;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 0;
+}
