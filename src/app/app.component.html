@@ -16,7 +16,7 @@
           <mat-card-content>
             <p class="left-align bird-name">{{bird.name}}</p>
             <p class="left-align"><mat-icon class="location-icon">gps_fixed</mat-icon>
-              <span class="left-align" *ngIf="bird.latitude && bird.longitude">{{bird.latitude}}, {{bird.longitude}}</span>
+              <span class="left-align" *ngIf="bird.latitude && bird.longitude">{{bird.latitude | number : '1.2-2'}}, {{bird.longitude | number : '1.2-2'}}</span>
               <span class="left-align" *ngIf="!bird.latitude || !bird.longitude">Unknown Location</span>
             </p>
             <p class="left-align"><strong>Species: </strong>{{bird.species}}</p>
@@ -55,41 +55,41 @@
     <form [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value);">
 
       <div>
-        <div class="label">
+        <div class="center-align padding">
           <label for="name">Scientific Name</label>
         </div>
 
-        <div class="input">
+        <div class="center-align">
           <input id="name" type="text" formControlName="name" autocomplete="off">
         </div>
       </div>
 
       <div>
-        <div class="label">
+        <div class="center-align padding">
           <label for="species">Species</label>
         </div>
 
-        <div class="input">
+        <div class="center-align">
           <input id="species" type="text" formControlName="species" autocomplete="off">
         </div>
       </div>
 
       <div>
-        <div class="label">
+        <div class="center-align padding">
           <label for="notes">Notes</label>
         </div>
 
-        <div class="input">
+        <div class="center-align">
           <input id="notes" type="text" formControlName="notes" maxlength="200" autocomplete="off">
         </div>
       </div>
 
       <div>
-        <div class="label">
+        <div class="center-align padding">
           <label for="rarity">Rarity</label>
         </div>
 
-        <div class="input">
+        <div class="center-align">
           <select id="rarity" formControlName="rarity">
             <option value="common">common</option>
             <option value="rare">rare</option>
@@ -98,7 +98,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="padding">
         <button class="add-btn form-btn-width" type="submit" mat-button>
           Submit
         </button>
