@@ -93,6 +93,7 @@ export class AppComponent implements OnInit {
     this.checkoutForm.controls.rarity.value = bird.rarity;
     this.checkoutForm.controls.species.value = bird.species;
     this.checkoutForm.controls.notes.value = bird.notes;
+    this.checkoutForm.controls.timestamp.value = bird.timestamp;
   }
 
   submitForm(value) {
