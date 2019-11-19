@@ -12,27 +12,13 @@ The flow of the app is as follows:
 Step 1) The user is prompted to allow the app to access the user's location, if this is allowed the geo location is saved with the entries.
 An angular material dialog is opened for first time user's to enter their name.
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Step 2 ) The main view is opened 
  
 Step 3) Clicking the Add observation button opens the form.
  
 Step 4) After successfully entering the details an entry is added to the list.
  
-Step 5) Clicking the view Notes buttons opens a dialog displaying the note.
+Step 5) Clicking the view Notes button opens a dialog displaying the note.
  
 
 
