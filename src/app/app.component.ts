@@ -3,6 +3,8 @@ import {FormBuilder} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {uuid} from 'uuidv4';
 
+import {environment} from '../environments/environment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -62,7 +64,7 @@ export class AppComponent implements OnInit {
   }
 
   error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
+    !environment.production && console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 
   openWelcomeDialog() {
@@ -135,6 +137,7 @@ export class AppComponent implements OnInit {
             value.latitude = this.latitude;
             this.birdList[i] = value;
             localStorage.setItem('observations', JSON.stringify(this.birdList));
+            break;
           }
         }
       }
